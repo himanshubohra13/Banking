@@ -101,7 +101,9 @@ do{
         cout<<"Enter the account number";
         cin.getline(acc,10);
         fin.open("bank.dat",ios::in|ios::binary);
-        fout.open("bank.dat",ios::out|ios::binary|ios::app);
+        fout.open("bank.dat",ios::out|ios::binary);
+        fin.seekg(0);
+        fout.seekp(0);
         while(!fout.eof()){
             pos=fin.tellg();
             fin.read((char*)&b,sizeof(b));
