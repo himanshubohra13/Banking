@@ -4,7 +4,7 @@
 #include<cstring>
 using namespace std;
 class Customer{
-    char acc_number[10];
+    char acc_number[11];
     char first_name[20];
     char last_name[20];
     char t;
@@ -27,7 +27,7 @@ void Customer::opening(){
     cout<<"Enter last name"<<endl;
     cin.getline(last_name,20);
     cout<<"Enter 10 digit account number"<<endl;
-    cin.getline(acc_number,10);
+    cin.getline(acc_number,11);
     cout<<"Enter type of account (s) for saving and (c) for current "<<endl;
     cin>>t;
     cout<<"Amount you want to deposit "<<endl;
@@ -72,7 +72,7 @@ void Customer::display(){
 
 int main(){
     int a;
-    char acc[10];
+    char acc[11];
     char x;
     ifstream fin;
     ofstream fout;
@@ -99,7 +99,7 @@ do{
         fflush(stdout);
         int pos;
         cout<<"Enter the account number";
-        cin.getline(acc,10);
+        cin.getline(acc,11);
         fin.open("bank.dat",ios::in|ios::binary);
         fout.open("bank.dat",ios::out|ios::binary);
         fin.seekg(0);
@@ -124,7 +124,7 @@ do{
         fflush(stdin);
         fflush(stdout);
         cout<<"Enter the account number";
-        cin.getline(acc,10);
+        cin.getline(acc,11);
         fin.open("bank.dat",ios::in|ios::binary);
         fout.open("bank.dat",ios::out|ios::binary);
         while(!fout.eof()){
@@ -146,7 +146,7 @@ do{
         fflush(stdin);
         fflush(stdout);
         cout<<"Enter the account number";
-        cin.getline(acc,10);
+        cin.getline(acc,11);
         fin.open("bank.dat",ios::in|ios::binary);
         while(!fin.eof()){
             fin.read((char*)&b,sizeof(b));
